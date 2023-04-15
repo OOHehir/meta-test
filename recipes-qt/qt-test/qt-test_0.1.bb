@@ -1,8 +1,12 @@
 SUMMARY = "QT Test Recipe"
 LICENSE = "CLOSED"
 
-SRC_URI = "file://qt-test.pro \
-           file://qt-test.cpp"
+# PR service enabled in local.conf
+SRC_URI = "git://git@github.com/OOHehir/meta-test/tree/main/recipes-qt/qt-test/files;protocol=ssh;branch=main"
+SRCREV="${AUTOREV}"
+
+# SRC_URI = "file://qt-test.pro \
+#           file://qt-test.cpp"
 
 DEPENDS += "qtbase"
 RDEPENDS_${PN} += "qtwayland"
