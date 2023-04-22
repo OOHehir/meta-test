@@ -11,12 +11,7 @@ IMAGE_INSTALL += "\
     helloworld \
 "
 
-
-RDEPENDS:${PN} += " \
-    packagegroup-qt6-essentials \
-    packagegroup-qt6-addons \
-    nativesdk-packagegroup-qt6-toolchain-host \
-"
+inherit packagegroup-qt6-essentials packagegroup-qt6-addons nativesdk-packagegroup-qt6-toolchain-host core-image
 
 TOOLCHAIN_HOST_TASK += "\
     nativesdk-packagegroup-qt6-toolchain-host \
