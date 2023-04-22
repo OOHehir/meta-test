@@ -11,7 +11,7 @@ IMAGE_INSTALL += "\
     helloworld \
 "
 
-inherit core-image
+inherit nativesdk-packagegroup-qt6-toolchain-host packagegroup-qt6-modules core-image
 
 TOOLCHAIN_HOST_TASK += "\
     nativesdk-packagegroup-qt6-toolchain-host \
