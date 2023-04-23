@@ -1,4 +1,4 @@
-DESCRIPTION = "An image that includes Qt6 with a demo application"
+DESCRIPTION = "An image that includes Qt6 with a demo application & SDK"
 LICENSE = "MIT"
 PR = "r0"
 
@@ -14,15 +14,15 @@ inherit core-image
 #    packagegroup-qt6-addons \
 # "
 
-IMAGE_INSTALL +=  " \
-    packagegroup-qt6-essentials \
-    packagegroup-qt6-addons \
-"
+# IMAGE_INSTALL +=  " \
+#    packagegroup-qt6-essentials \
+#    packagegroup-qt6-addons \
+#"
 
 TOOLCHAIN_HOST_TASK += "\
     nativesdk-packagegroup-qt6-toolchain-host \
 "
 
-TOOLCHAIN_TARGET_TASK += "\
-    packagegroup-qt6-modules \
-"
+# TOOLCHAIN_TARGET_TASK += "\
+#    packagegroup-qt6-modules \
+# "
