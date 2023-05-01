@@ -12,7 +12,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327"
 DEPENDS += "qtbase"
 
 SRC_URI = "\
-           git://github.com/b2open/simpleDemoQt5Quick.git;branch=master \
+           git://github.com/b2open/simpleDemoQt5Quick.git;protocol=ssh;branch=master;protocol=https \
     "
 SRCREV = "dc1af35cabe6e8efb302da338e22c64f38e639d3"
 
