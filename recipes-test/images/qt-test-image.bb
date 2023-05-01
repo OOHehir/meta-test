@@ -4,7 +4,7 @@ PR = "r0"
 
 IMAGE_INSTALL += "\
     qt-test \
-    demo-b2clock \
+    qml-demo \
     helloworld \
 "
 
