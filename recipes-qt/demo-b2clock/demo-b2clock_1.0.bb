@@ -20,7 +20,7 @@ S = "${WORKDIR}/git"
 
 COMPATIBLE_MACHINE = "raspberrypi4"
 
-do_install_append() {
+do_install:append() {
   install -d ${D}/opt/b2open/bin/
 }
 
