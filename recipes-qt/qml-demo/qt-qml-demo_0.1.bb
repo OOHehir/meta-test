@@ -7,7 +7,7 @@ SRC_URI = "file://CMakeLists.txt	    \
            file://Main.qml              \
           "
 
-DEPENDS += "qtbase qtquick"
+DEPENDS += "qtbase qtquick3d"
 RDEPENDS_${PN} += "qtwayland"
 
 S = "${WORKDIR}"
