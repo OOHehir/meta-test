@@ -19,4 +19,4 @@ do_install:append() {
 
 # FILES_${PN} += "${D}${bindir}/qml-demo"
 
-inherit qt6-cmake
+inherit qt6-cmake packagegroup-qt6-essentials
