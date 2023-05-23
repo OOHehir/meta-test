@@ -7,16 +7,16 @@ SRC_URI = "file://CMakeLists.txt	    \
            file://Main.qml              \
           "
 
-DEPENDS += " packagegroup-qt6-modules "
-
+DEPENDS += "qtbase qtquick3d"
 RDEPENDS_${PN} += "qtwayland"
 
 S = "${WORKDIR}"
 
-# Not needed as install is handled by cmake..
-# do_install:append() {
-#    install -d ${D}${bindir}
-#    install -m 0755${WORKDIR}/build/qt-qml-demo ${D}${bindir}
-#}
+do_install:append() {
+    install -d ${D}${bindir}
+    install -m 0755 qt-qml-demo ${D}${bindir}
+}
 
-inherit qt6-cmake
+# FILES_${PN} += "${D}${bindir}/qml-demo"
+
+inherit qt6-cmake packagegroup-qt6-essentials
