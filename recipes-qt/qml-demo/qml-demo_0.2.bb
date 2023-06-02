@@ -2,7 +2,7 @@ SUMMARY = "QT QML Test Recipe"
 LICENSE = "CLOSED"
 PR = "202361"
 
-SRCREV="${AUTOREV}"
+# SRCREV="${AUTOREV}"
 
 SRC_URI = "file://CMakeLists.txt	     \
            file://main.cpp              \
