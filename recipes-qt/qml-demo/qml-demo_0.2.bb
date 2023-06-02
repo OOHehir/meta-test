@@ -1,6 +1,6 @@
 SUMMARY = "QT QML Test Recipe"
 LICENSE = "CLOSED"
-PR = "202361"
+PR = "202362"
 
 # SRCREV="${AUTOREV}"
 
