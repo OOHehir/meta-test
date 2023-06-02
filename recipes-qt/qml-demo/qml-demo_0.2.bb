@@ -4,8 +4,6 @@ PR = "2032-6-1"
 
 SRCREV="${AUTOREV}"
 
-PV = "0.0.1+git${SRCPV}"
-
 SRC_URI = "file://CMakeLists.txt	     \
            file://main.cpp              \
            file://Main.qml              "
