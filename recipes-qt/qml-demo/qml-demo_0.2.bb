@@ -2,8 +2,6 @@ SUMMARY = "QT QML Test Recipe"
 LICENSE = "CLOSED"
 PR = "2032-6-1"
 
-# PR service enabled in local.conf
-SRC_URI = "git://github.com/OOHehir/meta-test.git;protocol=ssh;branch=main;protocol=https"
 SRCREV="${AUTOREV}"
 
 PV = "0.0.1+git${SRCPV}"
