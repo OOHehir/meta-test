@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Window
 import QtQuick 2.0
 
@@ -10,25 +9,13 @@ Window {
     title: qsTr("Clock")
     color: "Gray"
 
-    Column {
+    Text{
+        id: time
         anchors.centerIn: parent
-        spacing: 50
-
-        Text{
-            id: time
-            anchors.centerIn: Column
-            font.pixelSize: 40
-            color: "white"
-            text: "00:00:00 UTC"
-        }
-
-        Button{
-            id: quit
-            anchors.centerIn: Column
-            font.pixelSize: 25
-            text: "Quit"
-            onClicked: Qt.callLater(Qt.quit())
-        }
+        font.pixelSize: 40
+        color: "white"
+        font.family: "Arial"
+        text: "00:00"
     }
 
     Timer {
@@ -42,7 +29,9 @@ Window {
         anchors.bottom: parent.bottom
         font.pixelSize: 20
         color: "white"
+        font.family: "Arial"
         text: "IP 000:000:000:000"
     }
 
 }
+
