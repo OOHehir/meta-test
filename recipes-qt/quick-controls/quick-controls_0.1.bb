@@ -9,13 +9,13 @@ SRC_URI = "file://CMakeLists.txt	     \
            file://Main.qml              "
 
 DEPENDS += " qtbase \
-             qtdeclarative \
              qtquick3d \
              qttools \
              qtshadertools \
              qtshadertools-native \
              qtdeclarative-native \
              qtlanguageserver \
+             qtdeclarative \
            "
 # qttools & after for QuickControls
 
