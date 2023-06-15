@@ -15,6 +15,7 @@ DEPENDS += " qtbase \
              qtdeclarative-native \
              qtlanguageserver \
            "
+           
 # qttools & after for QuickControls
 
 # RDEPENDS_${PN} += "qtwayland"
