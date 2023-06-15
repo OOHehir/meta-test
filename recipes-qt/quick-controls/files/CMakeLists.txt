@@ -38,7 +38,7 @@ qt_add_qml_module(app_quick_controls
     QML_FILES Main.qml
 )
 
-set_target_properties(app_qml_demo PROPERTIES
+set_target_properties(app_quick_controls PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
