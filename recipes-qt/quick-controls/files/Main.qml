@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
-import QtQuick 2.0
+import QtQuick
 
 ApplicationWindow {
     visible: true
