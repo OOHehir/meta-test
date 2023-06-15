@@ -12,8 +12,12 @@ DEPENDS += " qtbase \
              qtdeclarative \
              qtquick3d \
              qttools \
-               "
-# qttools for QuickControls
+             qtshadertools \
+             qtshadertools-native \
+             qtdeclarative-native \
+             qtlanguageserver \
+           "
+# qttools & after for QuickControls
 
 # RDEPENDS_${PN} += "qtwayland"
 
