@@ -26,6 +26,8 @@ find_package(Qt6
         Core
         Qml
         Gui
+        # Add for quick controls
+        QuickControls2
 )
 
 qt_add_executable(app_quick_controls
