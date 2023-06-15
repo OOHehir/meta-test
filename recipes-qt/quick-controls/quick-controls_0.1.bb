@@ -10,7 +10,7 @@ SRC_URI = "file://CMakeLists.txt	     \
 
 DEPENDS += " qtbase \
              qtquick3d \
-             qttools \
+             qttools-native \
              qtshadertools-native \
              qtdeclarative-native \
              qtlanguageserver \
