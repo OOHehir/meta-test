@@ -10,7 +10,10 @@ SRC_URI = "file://CMakeLists.txt	     \
 
 DEPENDS += " qtbase \
              qtdeclarative \
-             qtquick3d"
+             qtquick3d \
+             qttools \
+               "
+# qttools for QuickControls
 
 # RDEPENDS_${PN} += "qtwayland"
 
