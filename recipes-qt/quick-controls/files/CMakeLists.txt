@@ -28,12 +28,12 @@ find_package(Qt6
         Gui
 )
 
-qt_add_executable(app_qml_demo
+qt_add_executable(app_quick_controls
     main.cpp
 )
 
-qt_add_qml_module(app_qml_demo
-    URI qml_demo
+qt_add_qml_module(app_quick_controls
+    URI quick_controls
     VERSION 1.0
     QML_FILES Main.qml
 )
