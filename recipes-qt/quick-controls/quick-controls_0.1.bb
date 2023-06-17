@@ -10,7 +10,7 @@ SRC_URI = "file://CMakeLists.txt	     \
 
 # QT_COMMERCIAL_MODULES="1"
 
-EXTRA_OECMAKE += "-DCMAKE_FIND_DEBUG_MODE=TRUE"
+EXTRA_OECMAKE += "-DCMAKE_FIND_DEBUG_MODE=TRUE, -DQT_DEBUG_FIND_PACKAGE=ON"
 
 DEPENDS += "  packagegroup-qt6-essentials \
            "
