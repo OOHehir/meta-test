@@ -7,14 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(CMakePrintHelpers)
 
-# set(PROJECT_VERSION_MAJOR 6)
-# set(PROJECT_VERSION_MINOR 5)
-# set(PROJECT_VERSION 6.5.0)
+set(PROJECT_VERSION_MAJOR 6)
+set(PROJECT_VERSION_MINOR 5)
+set(PROJECT_VERSION 6.5.0)
 
-# cmake_print_variables(PROJECT_SOURCE_DIR)
-# cmake_print_variables(PROJECT_VERSION_MAJOR)
-# # Should output WORKDIR
-# cmake_print_variables(${S})
+cmake_print_variables(PROJECT_SOURCE_DIR)
+cmake_print_variables(PROJECT_VERSION_MAJOR)
+# Should output WORKDIR
+cmake_print_variables(${S})
 
 
 find_package(Qt6
@@ -53,11 +53,11 @@ target_link_libraries(app_quick_controls
     PRIVATE Qt6::Quick
 )
 
-#install(TARGETS qt_qml_demo
-#  RUNTIME DESTINATION PROJECT_SOURCE_DIR
-#  BUNDLE DESTINATION PROJECT_SOURCE_DIR
-#  LIBRARY DESTINATION PROJECT_SOURCE_DIR
-#)
+install(TARGETS qt_qml_demo
+ RUNTIME DESTINATION PROJECT_SOURCE_DIR
+ BUNDLE DESTINATION PROJECT_SOURCE_DIR
+ LIBRARY DESTINATION PROJECT_SOURCE_DIR
+)
 
 install(TARGETS app_quick_controls
     BUNDLE DESTINATION .
