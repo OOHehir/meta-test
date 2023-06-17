@@ -7,14 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(CMakePrintHelpers)
 
-set(PROJECT_VERSION_MAJOR 6)
-set(PROJECT_VERSION_MINOR 5)
-set(PROJECT_VERSION 6.5.0)
+# set(PROJECT_VERSION_MAJOR 6)
+# set(PROJECT_VERSION_MINOR 5)
+# set(PROJECT_VERSION 6.5.0)
 
-cmake_print_variables(PROJECT_SOURCE_DIR)
-cmake_print_variables(PROJECT_VERSION_MAJOR)
-# Should output WORKDIR
-cmake_print_variables(${S})
+# cmake_print_variables(PROJECT_SOURCE_DIR)
+# cmake_print_variables(PROJECT_VERSION_MAJOR)
+# # Should output WORKDIR
+# cmake_print_variables(${S})
 
 
 find_package(Qt6
