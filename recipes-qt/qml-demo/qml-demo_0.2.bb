@@ -9,7 +9,7 @@ SRC_URI = "file://CMakeLists.txt	     \
            file://Main.qml              "
 
 DEPENDS += " qtbase \
-             qtdeclarative \
+             qtdeclarative-native \
              qtquick3d"
 
 # RDEPENDS_${PN} += "qtwayland"
