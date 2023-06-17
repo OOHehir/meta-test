@@ -12,14 +12,11 @@ SRC_URI = "file://CMakeLists.txt	     \
 
 EXTRA_OECMAKE += "-DCMAKE_FIND_DEBUG_MODE=TRUE, -DQT_DEBUG_FIND_PACKAGE=ON"
 
-DEPENDS += "  packagegroup-qt6-essentials \
-              qtshadertools \
-              qtbase \
+DEPENDS += "  qtbase \
               qtquick3d \
               qttools-native \
               qtshadertools-native \
               qtdeclarative-native \
-              qtlanguageserver \
            "
 
 # DEPENDS += " qtbase \
