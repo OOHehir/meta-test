@@ -8,7 +8,8 @@ SRC_URI = "file://CMakeLists.txt	     \
            file://main.cpp              \
            file://Main.qml              "
 
-DEPENDS += " packagegroup-qt6-essentials"
+DEPENDS += "  packagegroup-qt6-essentials \
+              packagegroup-qt6-addons "
 
 # DEPENDS += " qtbase \
 #              qtquick3d \
