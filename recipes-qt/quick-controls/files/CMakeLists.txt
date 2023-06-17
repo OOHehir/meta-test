@@ -38,7 +38,7 @@ qt_add_executable(app_quick_controls
 qt_add_qml_module(app_quick_controls
     URI quick_controls
     VERSION 1.0
-    QML_FILES Main.qml
+    QML_FILES Main2.qml
 )
 
 set_target_properties(app_quick_controls PROPERTIES

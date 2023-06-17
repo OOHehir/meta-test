@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
     QQuickStyle::setStyle("Material");
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl::fromLocalFile("Main.qml"));
-//    const QUrl url(u"qrc:/qt-qml-demo/Main.qml"_qs);
+    engine.load(QUrl::fromLocalFile("Main2.qml"));
+//    const QUrl url(u"qrc:/qt-qml-demo/Main2.qml"_qs);
 //    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
 //        &app, [url](QObject *obj, const QUrl &objUrl) {
 //            if (!obj && url == objUrl)
