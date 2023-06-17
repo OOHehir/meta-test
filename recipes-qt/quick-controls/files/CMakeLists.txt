@@ -51,6 +51,7 @@ set_target_properties(app_quick_controls PROPERTIES
 
 target_link_libraries(app_quick_controls
     PRIVATE Qt6::Quick
+    PRIVATE Qt6::QuickControls2
 )
 
 # install(TARGETS quick_controls
