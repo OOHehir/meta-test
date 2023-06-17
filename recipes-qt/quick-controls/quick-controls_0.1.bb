@@ -13,7 +13,7 @@ SRC_URI = "file://CMakeLists.txt	     \
 EXTRA_OECMAKE += "-DCMAKE_FIND_DEBUG_MODE=TRUE, -DQT_DEBUG_FIND_PACKAGE=ON"
 
 DEPENDS += "  packagegroup-qt6-essentials \
-              qtshadertools
+              qtshadertools \
            "
 
 # DEPENDS += " qtbase \
