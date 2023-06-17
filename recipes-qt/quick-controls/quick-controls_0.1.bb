@@ -12,24 +12,15 @@ SRC_URI = "file://CMakeLists.txt	     \
 
 EXTRA_OECMAKE += "-DCMAKE_FIND_DEBUG_MODE=TRUE, -DQT_DEBUG_FIND_PACKAGE=ON"
 
-DEPENDS += "  qtbase \
-              qtquick3d \
-              qttools-native \
-              qtshadertools-native \
-              qtdeclarative-native \
+DEPENDS += " qtbase \
+             qtdeclarative-native \
+             qtquick3d \
            "
 
-# DEPENDS += " qtbase \
-#              qtquick3d \
-#              qttools-native \
-#              qtshadertools-native \
-#              qtdeclarative-native \
-#              qtlanguageserver \
-#            "
-           
-# qttools & after for QuickControls
-
-# RDEPENDS_${PN} += "qtwayland"
+# For QuickControls
+DEPENDS += "  qttools-native \
+              qtshadertools-native \
+           "
 
 S = "${WORKDIR}"
 

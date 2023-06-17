@@ -8,8 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(CMakePrintHelpers)
 
 set(PROJECT_VERSION_MAJOR 6)
-set(PROJECT_VERSION_MINOR 5)
-set(PROJECT_VERSION 6.5.0)
+set(PROJECT_VERSION_MINOR 2)
+set(PROJECT_VERSION 6.2.4)
 
 cmake_print_variables(PROJECT_SOURCE_DIR)
 cmake_print_variables(PROJECT_VERSION_MAJOR)
@@ -28,8 +28,6 @@ find_package(Qt6
         Gui
         QuickControls2
 )
-
-        # Add QuickControls2 for quick controls
 
 qt_add_executable(app_quick_controls
     main.cpp

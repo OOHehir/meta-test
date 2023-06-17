@@ -10,9 +10,8 @@ SRC_URI = "file://CMakeLists.txt	     \
 
 DEPENDS += " qtbase \
              qtdeclarative-native \
-             qtquick3d"
-
-# RDEPENDS_${PN} += "qtwayland"
+             qtquick3d \
+           "
 
 S = "${WORKDIR}"
 
