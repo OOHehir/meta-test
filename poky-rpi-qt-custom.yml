@@ -1,0 +1,129 @@
+header:
+  version: 8
+
+machine: raspberrypi4
+distro: poky
+target:
+  - core-image-base
+
+repos:
+  meta-raspberrypi:
+    url: https://github.com/agherzan/meta-raspberrypi
+    path: layers/meta-raspberrypi
+    refspec: kirkstone
+
+  poky:
+    url: https://git.yoctoproject.org/git/poky
+    path: layers/poky
+    refspec: kirkstone
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+  meta-openembedded:
+    url: http://git.openembedded.org/meta-openembedded
+    path: layers/meta-openembedded
+    refspec: kirkstone
+    layers:
+      meta-oe:
+      meta-python:
+      meta-networking:
+      meta-perl:
+
+  meta-qt6:
+    url: https://code.qt.io/yocto/meta-qt6.git
+    path: layers/meta-qt6    
+    refspec: origin/6.5.0
+
+  meta-test:
+    # Warning, doesn't update!
+    url: https://github.com/OOHehir/meta-test.git
+    path: layers/meta-test
+    refspec: main
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+local_conf_header:
+  reduce_diskspace: |
+    INHERIT += "rm_work_and_downloads"
+  standard: |
+    CONF_VERSION = "2"
+    PACKAGE_CLASSES = "package_rpm"
+    SDKMACHINE = "x86_64"
+    USER_CLASSES = "buildstats"
+    PATCHRESOLVE = "noop"
+
+    # Image types (quicker to flash with)
+    IMAGE_FSTYPES = "wic wic.gz"
+
+    # Added - you probably want to changes these next two lines!
+    DL_DIR = "/home/projects/yocto/localCache/downloads"
+    SSTATE_DIR = "/home/projects/yocto/localCache/sstate-cache"
+    
+    BB_SIGNATURE_HANDLER = "OEEquivHash"
+    BB_HASHSERVE = "auto"
+    BB_HASHSERVE_UPSTREAM = "hashserv.yocto.io:8687"
+    SSTATE_MIRRORS ?= "file://.* https://sstate.yoctoproject.org/all/PATH;downloadfilename=PATH"
+
+    # Test apps
+    IMAGE_INSTALL:append = "    qt-test \
+                                qml-demo \
+                                helloworld \
+                                quick-controls \
+                           "
+
+    # Only required for testing
+    DISTRO_FEATURES:remove = "ptest"
+
+    # Include Qt6 toolchain when making SDK   
+    TOOLCHAIN_HOST_TASK += " nativesdk-packagegroup-qt6-toolchain-host \
+                            "
+  rpi-specific: |
+      ENABLE_I2C = "1"
+      DISTRO_FEATURES:append = " wifi"
+      VIDEO_CAMERA = "0"
+      DISABLE_RPI_BOOT_LOGO = "1"
+      
+      # For RPI4 this enables both console text display & graphics (for EGLFS)
+      VC4DTBO = "vc4-fkms-v3d-pi4"
+      # framebuffer_width=800
+      # framebuffer_height=480
+
+  qt-specific: |
+      # Use VC4 driver EGLFS
+      IMAGE_INSTALL:remove = "wayland weston weston-init"
+      DISTRO_FEATURES:remove = "x11"
+
+      # Doesn't resolve the message: 'Qt depends on a UTF-8 locale, but has failed to switch to one.'
+      GLIBC_GENERATE_LOCALES = "en_GB en_US en_GB.UTF-8 en_US.UTF-8"
+      IMAGE_LINGUAS = "en-gb en-us"
+
+      # No fonts available on QML apps without adding this 
+      IMAGE_INSTALL:append = "\
+            ttf-dejavu-sans \
+            ttf-dejavu-sans-mono \
+            ttf-dejavu-sans-condensed \
+            ttf-dejavu-serif \
+            ttf-dejavu-serif-condensed \
+            ttf-dejavu-common \
+            "
+
+  debug-tweaks: |
+    EXTRA_IMAGE_FEATURES = "debug-tweaks ssh-server-openssh"
+
+  diskmon: |
+    BB_DISKMON_DIRS = "\
+        STOPTASKS,${TMPDIR},1G,100K \
+        STOPTASKS,${DL_DIR},1G,100K \
+        STOPTASKS,${SSTATE_DIR},1G,100K \
+        STOPTASKS,/tmp,100M,100K \
+        HALT,${TMPDIR},100M,1K \
+        HALT,${DL_DIR},100M,1K \
+        HALT,${SSTATE_DIR},100M,1K \
+        HALT,/tmp,10M,1K"
+
+
